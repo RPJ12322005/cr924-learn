@@ -4,10 +4,19 @@
         <link href="/static/css/plants.css" rel="stylesheet"> 
     </head>
     <body>
-        <h2 class="big">Plants</h2>
+        <h2 id="plant" class="big">Plants</h2>
         <p style="color: #730050">mini rose, spider plants, mini orchid, aloe vera</p>
         <p style="color: teal">colors</p>
+        <button onclick="myFunction()">Click me</button>
     </body>
+    <script>
+            function myFunction(){
+                document.getElementById("plant").innerHTML = "Hello JavaScript!";
+
+            }
+
+    </script>
+        
 </html>
 
 
