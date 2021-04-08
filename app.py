@@ -5,7 +5,7 @@ app = Flask(__name__)
   #def __init__(self, text,color):
  #   self.text = text
  #   self.color = color
-
+      
  
 @app.route('/')
 def home():
