@@ -1,11 +1,15 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify,request
 app = Flask(__name__)
 
 #class Thing:
   #def __init__(self, text,color):
  #   self.text = text
  #   self.color = color
-      
+
+newThing = {
+        "text": "Plants That I Have!!",
+        "color": "#50c878"
+    }      
  
 @app.route('/')
 def home():
@@ -18,17 +22,24 @@ def getText():
    
 @app.route("/thing",methods=['GET'])
 def getThing():
- ##  newThing = Thing("Plants That I Have!","#50c878")
-   
-   newThing = {
-        "text": "Plants That I Have!!",
-        "color": "#50c878"
-    }
 
    return jsonify(newThing)
 
 
+@app.route("/testPost", methods=['POST'])
+def postThing():
+   data = request.json
+   newThing['text'] = data['text']
+   newThing['color'] = data['color']
+   return jsonify(newThing)
+  
+  
 
 
 if __name__ == '__main__':
    app.run()
+
+
+
+
+
